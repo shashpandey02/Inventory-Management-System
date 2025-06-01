@@ -21,7 +21,7 @@ public class ConnectionProvider {
         Connection con=null;
         try{
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\ComputerLab\\Desktop\\Inventory Management System\\DB\\Inv.db");
+            con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\shash\\OneDrive\\Desktop\\Inventory-Management-System-main\\Inventory Management System\\DB\\Inv.db");
             System.out.println("Connection established successfully");
             return con;
         }

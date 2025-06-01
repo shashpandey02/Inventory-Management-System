@@ -220,8 +220,8 @@ String URole;
                     String asset=rs.getString("slno");
                     if(asset.equals(a)){
                         f=1;
-                        con.close();
-                        st.close();
+//                        con.close();
+//                        st.close();
                         setVisible(false);
                         new SearchRes(a).setVisible(true);//opening a new window
                     }

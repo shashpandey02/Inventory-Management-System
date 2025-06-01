@@ -21,9 +21,9 @@ public class tables {
             con=ConnectionProvider.getCon();
             st=con.createStatement();
             
-            st.executeUpdate("create table appuser(appuser_pk INTEGER PRIMARY KEY AUTOINCREMENT, userRole varchar(50), name varchar(200), mobileNo varchar(50), username varchar(200), password varchar(50), address varchar(200), status varchar(50))");
+            st.executeUpdate("create table if not exists appuser(appuser_pk INTEGER PRIMARY KEY AUTOINCREMENT, userRole varchar(50), name varchar(200), mobileNo varchar(50), username varchar(200), password varchar(50), address varchar(200), status varchar(50))");
             st.executeUpdate("insert into appuser(userRole, name, mobileNo, username, password, address, status) values ('superadmin','Shashwat Pandey','9335484502', 'shash02', '12345', 'Lucknow', 'Active')");
-            st.executeUpdate("create table equipment(assetID INTEGER PRIMARY KEY AUTOINCREMENT, slno varchar(100), eqID TEXT, eqName varchar(200), loc varchar(50),srvNo TEXT, fails int)");
+            st.executeUpdate("create table if not exists equipment(assetID INTEGER PRIMARY KEY AUTOINCREMENT, slno varchar(100), eqID TEXT, eqName varchar(200), loc varchar(50),srvNo TEXT, fails int)");
             st.executeUpdate("CREATE TABLE IF NOT EXISTS historyCard (SN INTEGER PRIMARY KEY AUTOINCREMENT, eqID TEXT, reportDate TEXT, failedDate TEXT, rectifiedDate TEXT, correctiveActionRefNo TEXT, report)");
 //            st.executeUpdate("insert into historyCard(ID, reportDate, failedDate, rectifiedDate, correctiveActionRefNo) values ('NOP/LGS/STC/01','02/11/2015','02/11/2015', '02/11/2015', 'System Reset')");
 //            st.executeUpdate("insert into historyCard(ID, reportDate, failedDate, rectifiedDate, correctiveActionRefNo) values ('NOP/LGS/STC/01','20/03/2019','20/03/2019', '21/03/2019', 'Report attached')");
